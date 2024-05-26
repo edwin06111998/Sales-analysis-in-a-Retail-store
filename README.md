@@ -1,4 +1,6 @@
-# Proyecto | Analisis del Dataset Super Store
+![Analisis de ventas en tienda tipo Retail](/images/cover.png)
+
+# Analisis de ventas en tienda tipo Retail
 
 Para este proyecto se contó con la información de las transacciones de ventas de la empresa “Super Store”, en los cuales se descubrieron nuevos insights que buscan generar propuestas de valor para el beneficio de la empresa.
 
@@ -28,7 +30,7 @@ Se revisa los campos que se tienen disponibles. Entre ellos se encontraron cambi
 - Para las coordenadas. Se revisa que se encuentran escritas como “(37.8393, -84.27)”. Además, se tiene valores con “vacíos” que incluian el valor “Unknown”. Por lo que se retira los “Unknown” y se procede a separar en columnas distintas de nombre “lat” y “long”
 - Se modifica el campo “Sales” en los casos que tienen un valor de 1. Para imputar esos valores de ventas se considera en los promedios de valor en sales por Product ID.
 
-![imagen_2024-03-17_213543256.png](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/imagen_2024-03-17_213543256.png)
+![imagen_2024-03-17_213543256.png](images/imagen_2024-03-17_213543256.png)
 
 - Se retira los casos en los que “Profit” tiene valores negativos.
 - Se modifica los casos en los que la fecha de orden es mayor a la fecha de llegada. Para ello se realiza una pequeño ajusto en esos casos al considerar la fecha de orden como correcta y se suma los días en los que en promedio ese tipo de envío suele tardar en llegar.
@@ -39,7 +41,7 @@ Se modifico el tipo de variables acorde a cada uno. resultando en lo siguente:
 df_nuevo.dtypes
 ```
 
-![imagen_2024-03-17_212706953.png](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/imagen_2024-03-17_212706953.png)
+![imagen_2024-03-17_212706953.png](images/imagen_2024-03-17_212706953.png)
 
 ---
 
@@ -57,7 +59,7 @@ df['Ship Date'] = pd.to_datetime(df['Ship Date'], errors='coerce')
 df.info()
 ```
 
-![Las fechas se las trabaja con formato **datetime**, y las coordenadas geográficas como **float**.](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled.png)
+![Las fechas se las trabaja con formato **datetime**, y las coordenadas geográficas como **float**.](images/Untitled.png)
 
 Las fechas se las trabaja con formato **datetime**, y las coordenadas geográficas como **float**.
 
@@ -73,7 +75,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     df.Sales.describe()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%201.png)
+    ![Untitled](images/Untitled%201.png)
     
     De estos datos podemos destacar lo siguiente:
     
@@ -91,7 +93,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     plt.show()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%202.png)
+    ![Untitled](images/Untitled%202.png)
     
     El gráfico indica que una gran parte de las transacciones han sido de bajo valor monetario comparado con el promedio.
     
@@ -103,7 +105,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     df.Quantity.describe()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%203.png)
+    ![Untitled](images/Untitled%203.png)
     
     De estos datos podemos destacar lo siguiente:
     
@@ -122,7 +124,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     plt.show()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%204.png)
+    ![Untitled](images/Untitled%204.png)
     
     Cada transacción en promedio vende 4 unidades con una frecuencia notablemente alta, lo que provoca que exista un gran volumen de ventas para este rango de unidades.
     
@@ -134,7 +136,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     df.Profit.describe()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%205.png)
+    ![Untitled](images/Untitled%205.png)
     
     De estos datos podemos destacar lo siguiente:
     
@@ -153,7 +155,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     plt.show()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%206.png)
+    ![Untitled](images/Untitled%206.png)
     
     Este claro sesgo a la derecha indica que son pocas las transacciones que representan una gran cantidad de ganancia bruta, por el contrario, la mayoría oscilan en $45 en promedio.
     
@@ -183,7 +185,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     fig_product_by_sales_profit.show()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%207.png)
+    ![Untitled](images/Untitled%207.png)
     
     **Análisis:** Tables es la sub categoría de producto más rentable, debido a que, aunque haya generado pocas ventas, su valor de ganancia bruta es mucho mayor. Este mismo escenario se repite para Bookcases. Por el contrario, Furnishings no genera mucha ganancia comparado con la cantidad de ventas.
     
@@ -217,7 +219,7 @@ Las fechas se las trabaja con formato **datetime**, y las coordenadas geográfic
     plt.show()
     ```
     
-    ![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%208.png)
+    ![Untitled](images/Untitled%208.png)
     
     **Análisis:**El segmento que mas cantidades de unidades vendidas (Quantity) genera es el *Consumer*, lo que es directamente proporcional a la cantidad de descuento que estos perciben (*Discount*), ya que, este segmento suele tener el porcentaje de descuento más alto de todas las categorías, con un 30%. Mientras que los otros dos segmentos solo poseen un 20% de descuento, y entre ambos segmentos representan la mitad del total de unidades vendidas.
     
@@ -243,7 +245,7 @@ fig_sales_year = px.line(yearly_sales, x = yearly_sales['Order Date'], y = yearl
 fig_sales_year.show()
 ```
 
-![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%209.png)
+![Untitled](images/Untitled%209.png)
 
 **Análisis**: en el gráfico se puede observar una tendencia creciente en cuanto a las ventas a lo largo del tiempo. También es importante observar que desde 2025, las ventas nunca bajaron, en ningún mes.
 
@@ -280,7 +282,7 @@ axes1.legend(loc='upper right')
 plt.show()
 ```
 
-![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%2010.png)
+![Untitled](images/Untitled%2010.png)
 
 **Análisis:** en cuanto a cantidad de unidades vendidas (Quantity), existe una gran diferencia entre la categoría Furnishings respecto a las demás, con un 64% del total. Sin embargo, en cuanto al total de ventas por categoría (Sales) la situación cambia, siendo Chairs el producto que más ventas ha generado.
 
@@ -300,7 +302,7 @@ df_pivot.plot(kind='bar', figsize=(12, 8), zorder=3, title='Top 3 State Sales by
     .set(xlabel='Sub-Category', ylabel='Sales', xticklabels=df_pivot.index)
 ```
 
-![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%2011.png)
+![Untitled](images/Untitled%2011.png)
 
 **Análisis:** el estado de California es el único que se encuentra presente en el top de estados con más volúmen de ventas en las 4 categorías de productos existentes. El producto Chairs es con diferencia el producto más vendido en California y New York.
 
@@ -324,7 +326,7 @@ sns.barplot(data = df_sales_by_season, x = 'Season', y = 'Sales', ax=ax1)
 sns.barplot(data = df_quantity_by_season, x = 'Season', y = 'Quantity', ax=ax2)
 ```
 
-![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%2012.png)
+![Untitled](images/Untitled%2012.png)
 
 Análisis: a lo largo de las diferentes estaciones del año, se puede observar que las ventas son  proporcionales a la cantidad de unidades vendidas. Otoño es la época donde más ventas se realizan, esto cobra sentido debido a que esta temporada comprende los meses de (septiembre, octubre, noviembre), sobretodo noviembre, mes donde acontece el Black Friday, octubre se celebra Hallowen. Por otro lado, Primavera es la etapa menos rentable, esto porque comprende los meses de (marzo, abril, mayo), en los cuales acontecen fechas como el Spring Break, donde la gente aprovecha para irse de vacaciones, por lo tanto, no acostumbran a realizar compras de estas categorías de productos.
 
@@ -350,7 +352,7 @@ df_to_plot = df_to_plot.sort_values(by='Sales', ascending=False)
 sns.barplot(data = df_to_plot, x = 'State', y = 'Sales')
 ```
 
-![Untitled](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/Untitled%2013.png)
+![Untitled](images/Untitled%2013.png)
 
 **Análisis**: omitiendo el primer estado (Otros estados OT), se puede observar que California es con diferencia el estado donde existen la mayor cantidad de ventas, luego le sigue New York. A partir de ahí, todos los demás estados poseen cantidades muy similares de ventas.
 
@@ -367,7 +369,7 @@ Clientes = Clientes_activos.groupby("Customer ID")["Recencia_Order"].agg(["min",
 Clientes["Estado"]=np.where(Clientes["min"]<365,"Activo","Inactivos")
 ```
 
-![imagen_2024-03-17_214110333.png](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/imagen_2024-03-17_214110333.png)
+![imagen_2024-03-17_214110333.png](images/imagen_2024-03-17_214110333.png)
 
 ### **¿Cuántas veces compran los clientes activos?**
 
@@ -379,4 +381,4 @@ Clientes = Clientes.groupby(["Frecuencia","Estado"])["min"].count().reset_index(
 Clientes = pd.pivot_table(data=Clientes,values="min",index="Frecuencia",columns="Estado",fill_value=0).reset_index()
 ```
 
-![imagen_2024-03-17_214604163.png](Proyecto%20Analisis%20del%20Dataset%20Super%20Store%20d5caf44d7846486fa8109d682f258461/imagen_2024-03-17_214604163.png)
+![imagen_2024-03-17_214604163.png](images/imagen_2024-03-17_214604163.png)
